@@ -1,9 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace RestWithASPNET.Controllers
 {
@@ -38,9 +35,9 @@ namespace RestWithASPNET.Controllers
         {
             if (IsNumeric(firstNumber) && IsNumeric(secondNumber))
             {
-                var sum = ConvertToDecimal(firstNumber) - ConvertToDecimal(secondNumber);
+                var sub = ConvertToDecimal(firstNumber) - ConvertToDecimal(secondNumber);
 
-                return Ok(sum.ToString());
+                return Ok(sub.ToString());
             }
             return BadRequest("Invalid Input");
         }
@@ -51,9 +48,9 @@ namespace RestWithASPNET.Controllers
         {
             if (IsNumeric(firstNumber) && IsNumeric(secondNumber))
             {
-                var sum = ConvertToDecimal(firstNumber) / ConvertToDecimal(secondNumber);
+                var div = ConvertToDecimal(firstNumber) / ConvertToDecimal(secondNumber);
 
-                return Ok(sum.ToString());
+                return Ok(div.ToString());
             }
             return BadRequest("Invalid Input");
         }
@@ -64,9 +61,9 @@ namespace RestWithASPNET.Controllers
         {
             if (IsNumeric(firstNumber) && IsNumeric(secondNumber))
             {
-                var sum = (ConvertToDecimal(firstNumber) + ConvertToDecimal(secondNumber)) / 2;
+                var med = (ConvertToDecimal(firstNumber) + ConvertToDecimal(secondNumber)) / 2;
 
-                return Ok(sum.ToString());
+                return Ok(med.ToString());
             }
             return BadRequest("Invalid Input");
         }
@@ -77,9 +74,9 @@ namespace RestWithASPNET.Controllers
         {
             if (IsNumeric(number))
             {
-                var sum = ConvertToDouble(number);
+                var rai = ConvertToDouble(number);
 
-                var result = Math.Sqrt(sum);
+                var result = Math.Sqrt(rai);
 
                 return Ok(result.ToString());
             }
